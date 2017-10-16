@@ -13,5 +13,26 @@
  *= require_tree .
  *= require_self
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
+
+ html, body {
+  height: 100%;
+ }
+
+.centered {
+  text-align: center;
+}
+
+.form-wrapper {
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(
+    to bottom,
+    #5CC4CB 0%,
+    #5CC4CB 50%,
+    #FFF 50%,
+    #FFF 100%
+  );
+}

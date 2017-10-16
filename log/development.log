@@ -572,3 +572,219 @@ Processing by HomeController#index as HTML
   [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ?  ORDER BY "users"."id" ASC LIMIT 1  [["id", 1]]
   Rendered home/index.html.erb within layouts/application (0.1ms)
 Completed 200 OK in 22ms (Views: 21.1ms | ActiveRecord: 0.1ms)
+  [1m[36m (36.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (15.4ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to DeviseCreateUsers (20171015091330)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "email" varchar DEFAULT '' NOT NULL, "encrypted_password" varchar DEFAULT '' NOT NULL, "reset_password_token" varchar, "reset_password_sent_at" datetime, "remember_created_at" datetime, "sign_in_count" integer DEFAULT 0 NOT NULL, "current_sign_in_at" datetime, "last_sign_in_at" datetime, "current_sign_in_ip" varchar, "last_sign_in_ip" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.2ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+  [1m[36m (0.1ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_reset_password_token" ON "users" ("reset_password_token")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20171015091330"]]
+  [1m[36m (16.6ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_reset_password_token' AND type='index'
+[0m
+  [1m[35m (0.1ms)[0m              SELECT sql
+            FROM sqlite_master
+            WHERE name='index_users_on_email' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_users_on_email' AND type='index'
+
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-16 13:20:40 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 22ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-16 13:20:40 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 3624ms (Views: 3607.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+Processing by HomeController#index as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 24ms (Views: 22.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c79688de69e413ed7d120fbaf9a04151c85bbb9ec1449ffbb81545324fe83e6b.css?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/jquery.self-bd7ddd393353a8d2480a622e80342adf488fb6006d667e8b42e4c0073393abee.js?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/jquery_ujs.self-784a997f6726036b1993eb2217c9cb558e1cbb801c6da88105588c56f13b466a.js?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/turbolinks.self-1d1fddf91adc38ac2045c51f0a3e05ca97d07d24d15a4dcbf705009106489e69.js?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/bootstrap.self-b38817c3e3a3049abb1fc08dd6ae448b23330f8453226efdb074710209474f75.js?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/assets/application.self-f8806224e027f3e3f0138ea9ce99319e298dfdb323304d1f1be6eae8e8c74724.js?body=1" for 127.0.0.1 at 2017-10-16 13:20:44 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:22:04 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 48ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:24:58 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (2.5ms)
+Completed 200 OK in 32ms (Views: 29.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:25:34 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (2.4ms)
+Completed 200 OK in 1329ms (Views: 1328.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-d3f466cc1978b7911723b83f50fcf1c29bb3faea3e5fa06f09f09f3484488a8e.css?body=1" for 127.0.0.1 at 2017-10-16 13:25:35 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:32:20 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.6ms)
+Completed 200 OK in 1386ms (Views: 1384.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-cfd655ecb99104c47e88ef5c45cb519a0597404f5d506d07b58f0efd668d6471.css?body=1" for 127.0.0.1 at 2017-10-16 13:32:21 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:32:41 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.3ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.4ms)
+Completed 200 OK in 1374ms (Views: 1372.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-77573b09502e3a6bb3dd7cd7310df808ccb5e0e158e6e4d77e3bd5fa1ba3e15a.css?body=1" for 127.0.0.1 at 2017-10-16 13:32:43 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:34:50 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (2.8ms)
+Completed 200 OK in 1357ms (Views: 1355.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-0cc8bc568614672b147e7bbdca545bd042faaf7b82e2ff1bf493145985aa1172.css?body=1" for 127.0.0.1 at 2017-10-16 13:34:52 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:35:08 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.2ms)
+Completed 200 OK in 1351ms (Views: 1350.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-f1f18bc1a78524ed492d355cd7038da623215202503f55d7c04fd84d4561661b.css?body=1" for 127.0.0.1 at 2017-10-16 13:35:09 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:35:17 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.4ms)
+Completed 200 OK in 1374ms (Views: 1373.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-c82210eb70da3ebb73ea6b2289eb4534eedb5140bc1164101cd5b47384c8563a.css?body=1" for 127.0.0.1 at 2017-10-16 13:35:18 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:36:20 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.6ms)
+Completed 200 OK in 1324ms (Views: 1322.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-6c0c9d74aca351e9d9aa0512b3a5fe9c06fe87518a3a1cfe1a8a12c3896e3125.css?body=1" for 127.0.0.1 at 2017-10-16 13:36:21 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:36:42 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.7ms)
+Completed 200 OK in 1370ms (Views: 1368.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b67a0723f17ae1ff709254600ca46c36f0e509b9f8bd7d93081909bf1ea90abc.css?body=1" for 127.0.0.1 at 2017-10-16 13:36:43 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:36:48 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (4.9ms)
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:36:59 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (3.5ms)
+Completed 200 OK in 1366ms (Views: 1362.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-7240db6feb351e68f155e9463b45b0908e3f5f0266d189b6c1111502ad84b415.css?body=1" for 127.0.0.1 at 2017-10-16 13:37:00 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:37:49 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (2.5ms)
+Completed 200 OK in 1345ms (Views: 1343.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-de95c55eec0c0a375016c1f1ed17d68a450daa469edb394ed792b4cb630a0062.css?body=1" for 127.0.0.1 at 2017-10-16 13:37:51 -0400
+
+
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-10-16 13:37:59 -0400
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.2ms)
+  Rendered devise/registrations/new.html.erb within layouts/devise (2.8ms)
+Completed 200 OK in 1427ms (Views: 1426.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-b902ac7e20e0873108b4d46e6927dafd7954cbbd81574bd255bdd8a95c1ae65a.css?body=1" for 127.0.0.1 at 2017-10-16 13:38:00 -0400
