@@ -19,3 +19,17 @@
  .centered{
    text-align:center;
  }
+ 
+
+html, body{
+  height:100%;
+  margin:auto;
+
+}
+
+.form-wrapper{
+  background-image: linear-gradient(to bottom, #43c7f1 0%, #43c7f1 50%, #ffffff 50%, #ffffff 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+
+}
