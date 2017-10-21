@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171015091330) do
+ActiveRecord::Schema.define(version: 20171019103635) do
+
+  create_table "families", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "family_members", force: :cascade do |t|
+    t.string   "first_name"
+    t.string   "last_name_birth"
+    t.string   "last_name_now"
+    t.string   "gender"
+    t.datetime "birthday"
+    t.boolean  "this_person_is_living"
+    t.integer  "family_id"
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
+  add_index "family_members", ["family_id"], name: "index_family_members_on_family_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

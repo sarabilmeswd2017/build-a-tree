@@ -1,5 +1,6 @@
 <h1 class="centered">Build a Tree</h1>
 
+<%= render partial: 'family_members/form', locals {family_member: @family_member} %>
 
 <div class="family-tree">
   <%= image_tag("tree.png", :alt => "family tree", :class => "pull-right") %>
