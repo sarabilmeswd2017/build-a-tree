@@ -1,11 +1,44 @@
-<div class="form-group">
-    <%= f.label :name %>
-    <%= f.text_field :name, class: 'form-control', placeholder: "Enter application name" %>
-  </div>
-  <div class="form-group">
-    <%= f.label :url %>
-    <%= f.text_field :url, class: 'form-control', placeholder: "Enter url" %>
-  </div>
-  <div class="form-group">
-    <%= f.submit "Save", class: 'btn btn-success' %>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @family_member do |f| %>
+      <div class="form-group">
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, class: 'form-control', placeholder: "Enter first name" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name_now %>
+        <%= f.text_field :last_name_now, class: 'form-control', placeholder: "Enter last name now" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name_birth %>
+        <%= f.text_field :last_name_birth, class: 'form-control', placeholder: "Enter last name at birth " %>
+      </div>
+      <fieldset class="form-group">
+        <legend>Gender</legend>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="male" value="option1">
+            Male
+          </label>
+        </div>
+        <div class="form-check">
+          <label class="form-check-label">
+            <input type="radio" class="form-check-input" name="optionsRadios" id="female" value="option2">
+            Female
+          </label>
+        </div>
+      </fieldset>
+      <div class="form-group">
+        <%= f.label :birthday %>
+        <%= f.text_field :birthday, class: 'form-control', placeholder: "MM/DD/YYYY" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :this_person_is_living, class: 'checkbox'%>
+        <%= f.check_box :this_person_is_living%> This person is living
+      </div>
+      <div class="form-group">
+        <%= f.submit "Save", class: 'btn btn-success' %>
+      </div>
+      <% end %>
+    </div>
   </div>

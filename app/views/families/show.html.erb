@@ -1,0 +1,7 @@
+<h1 class="centered"><%= @family.name %></h1>
+
+<%= link_to "Add Family Members", new_family_member_path, class: 'btn btn-success' %>
+
+<div class="family-tree">
+  <%= image_tag("tree.png", :alt => "family tree", :class => "pull-right") %>
+</div>
