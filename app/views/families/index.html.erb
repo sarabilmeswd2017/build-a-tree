@@ -1,5 +1,17 @@
 <h1 class="centered">Build a Tree</h1>
-
-<div class="family-tree">
+ <div class="row pull-left">
+  <div class="col-md-4">
+    <%= @families.each do |family| %>
+      <div class="media">
+        <div class="media-body">
+          <h4 class="media-heading">
+            <p><%= link_to "#{family.name}", @family, class: 'btn btn-sucess' %></p>
+          </h4>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+<div class="family-tree pull-left">
   <%= image_tag("tree.png", :alt => "family tree", :class => "pull-right") %>
 </div>
