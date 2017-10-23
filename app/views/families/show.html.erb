@@ -1,14 +1,14 @@
 <h1 class="centered"><%= @family.name %></h1>
 
-<%#= link_to "Add Family Members", new_family_family_member_path, class: 'btn btn-success' %>
+<%= link_to "Add Family Members", new_family_family_member_path(@family), class: 'btn btn-success' %>
 <div class="row">
    <div class="col-md-8">
 
-     <% @family.family_member.each do |family_member| %>
+     <% @family.family_members.each do |family_member| %>
        <div class="media">
          <div class="media-body">
            <h4 class="media-heading">
-             <%= @family_member.first_name + @family_member.last_name %>
+             <%= "#{family_member.first_name} #{family_member.last_name_now}" %>
            </h4>
          </div>
        </div>
