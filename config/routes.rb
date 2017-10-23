@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :families
-  resources :family_members
   devise_for :users
+  resources :families do
+    resources :family_members, except: [:index]
+  end
+
   root to: 'home#index'
 end

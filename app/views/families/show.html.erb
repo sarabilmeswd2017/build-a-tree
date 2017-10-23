@@ -1,7 +1,21 @@
 <h1 class="centered"><%= @family.name %></h1>
 
-<%= link_to "Add Family Members", new_family_member_path, class: 'btn btn-success' %>
+<%#= link_to "Add Family Members", new_family_family_member_path, class: 'btn btn-success' %>
+<div class="row">
+   <div class="col-md-8">
 
+     <% @family.family_member.each do |family_member| %>
+       <div class="media">
+         <div class="media-body">
+           <h4 class="media-heading">
+             <%= @family_member.first_name + @family_member.last_name %>
+           </h4>
+         </div>
+       </div>
+     <% end %>
+   </div>
+
+ </div>
 <div class="family-tree">
   <%= image_tag("tree.png", :alt => "family tree", :class => "pull-right") %>
 </div>
