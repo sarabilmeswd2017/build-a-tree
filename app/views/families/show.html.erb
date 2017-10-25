@@ -1,22 +1,19 @@
 <h1 class="centered"><%= @family.name %></h1>
-
-<%= link_to "Add Family Members", new_family_family_member_path(@family), class: 'btn btn-success' %>
+<%# if @family.family_members = nil %>
+<%= link_to "Add Family Member", new_family_family_member_path(@family), class: 'btn btn-success' %>
+<%# else %>
+<%= link_to "Add Parent", new_family_family_member_path(@family, :child_ids), class: 'btn btn-success' %>
+<%= link_to "Add Child", new_family_family_member_path(@family, :parent_id), class: 'btn btn-success' %>
+<%# end %>
 <%= link_to "View All Families", families_path, class: 'btn btn-success' %>
 <div class="row">
    <div class="col-md-8">
-
+     <%= render @family_member.parent %>
      <% @family.family_members.each do |family_member| %>
-       <div class="media">
-         <div class="media-body">
-           <h4 class="media-heading">
-             <%= "#{family_member.first_name} #{family_member.last_name_now}" %>
-           </h4>
-         </div>
-       </div>
+       <%= render :partial => 'fruits' %>
      <% end %>
    </div>
-
- </div>
+</div>
 <div class="family-tree">
   <%= image_tag("tree.png", :alt => "family tree", :class => "pull-right") %>
 </div>

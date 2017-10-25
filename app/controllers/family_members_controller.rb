@@ -5,7 +5,7 @@ class FamilyMembersController < ApplicationController
 
   def new
     @family = Family.find(params[:family_id])
-    @family_member = FamilyMember.new
+    @family_member = FamilyMember.new(params[:parent_id])
   end
 
   def create
