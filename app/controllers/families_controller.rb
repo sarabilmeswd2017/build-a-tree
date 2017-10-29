@@ -24,6 +24,17 @@ class FamiliesController < ApplicationController
     @family = Family.find(params[:id])
   end
 
+  def destroy
+    @family = Family.find(params[:id])
+    if @family.destroy
+      flash[:notice] = "#{@family.name} was deleted"
+      redirect_to families_path
+    else
+      flash[:alert] = "There was an error deleting the Family. Please try again"
+      redirect_to families_path
+    end
+  end
+
   private
 
   def family_params

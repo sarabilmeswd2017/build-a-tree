@@ -1,0 +1,9 @@
+<div class="media">
+   <div class="media-body">
+     <h2 class="media-heading">
+       <%= "#{family_member.first_name} #{family_member.last_name_now}" %>
+       <%= link_to "Delete", [family_member.family, @family_member], method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this family member?' } %>
+     </h2>
+     <h3>Parent: <%= family_member.parent || 'Not specified' %></h3>
+   </div>
+ </div>

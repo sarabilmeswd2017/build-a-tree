@@ -8,12 +8,9 @@
 <%= link_to "View All Families", families_path, class: 'btn btn-success' %>
 <div class="row">
    <div class="col-md-8">
-     <%= render @family_member.parent %>
-     <% @family.family_members.each do |family_member| %>
-       <%= render :partial => 'fruits' %>
-     <% end %>
+     <%= render @family.family_members %>
    </div>
 </div>
 <div class="family-tree">
-  <%= image_tag("tree.png", :alt => "family tree", :class => "pull-right") %>
+  <%= image_tag("tree.png", alt: "family tree", class: "pull-right") %>
 </div>

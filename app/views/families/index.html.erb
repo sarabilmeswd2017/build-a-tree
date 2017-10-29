@@ -7,6 +7,8 @@
           <h4 class="media-heading">
             <p><%= link_to "#{family.name}", family, class: 'btn btn-sucess' %></p>
           </h4>
+          <%= link_to "Delete Family", @family, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to delete this family member?' } %>
+        </h2>
         </div>
       </div>
     <% end %>

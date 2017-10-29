@@ -17,7 +17,7 @@ class FamilyMembersController < ApplicationController
       flash[:notice] = "Family member was saved."
        redirect_to @family
      else
-       flash.now[:alert] = "There was an error saving the family member. Please try again."
+       flash[:alert] = "There was an error saving the family member. Please try again."
        render :new
      end
   end
@@ -30,7 +30,15 @@ class FamilyMembersController < ApplicationController
     @family_member = FamilyMember.find(params[:id])
   end
 
-  def delete
+  def destroy
+    @family_member = FamilyMember.find(params[:id])
+    if @family_member.destroy
+      flash[:notice] = "#{family_member.first_name} #{family_member.last_name_now} was deleted"
+      redirect_to @family
+    else
+      flash[:alert] = "There was an error deleting the family member. Please try again"
+      redirect_to @family
+    end
   end
 
   private
