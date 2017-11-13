@@ -35,6 +35,7 @@ GEM
       minitest (~> 5.1)
       thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
+    american_date (1.1.1)
     ancestry (3.0.1)
       activerecord (>= 3.2.0)
     arel (6.0.4)
@@ -209,6 +210,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  american_date
   ancestry
   bootstrap-sass
   byebug
@@ -231,4 +233,4 @@ DEPENDENCIES
   web-console (~> 2.0)
 
 BUNDLED WITH
-   1.16.0.pre.3
+   1.16.0

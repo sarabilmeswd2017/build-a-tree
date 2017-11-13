@@ -20,20 +20,25 @@
    text-align:center;
  }
 
-
-html, body{
+ html, body{
   height:100%;
-
 }
 
 .form-wrapper{
   height:100%;
   width:100%;
   background-image: linear-gradient(
-  to bottom,
-  #43c7f1 0%,
-  #43c7f1 50%,
-  #ffffff 50%,
-  #ffffff 100%);
+    to bottom,
+    #43c7f1 0%,
+    #43c7f1 50%,
+    #ffffff 50%,
+    #ffffff 100%);
+}
 
+.mt-md {
+  margin-top: 1.5rem;
+}
+
+.children {
+  margin-left: 2rem;
 }
