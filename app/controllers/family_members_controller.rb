@@ -5,7 +5,8 @@ class FamilyMembersController < ApplicationController
 
   def new
     @family = Family.find(params[:family_id])
-    @family_member = FamilyMember.new(params[:parent_id])
+    @parent = FamilyMember.find(params[:parent_id])
+    @family_member = @family.@family_members.new(parent_id: params[:parent_id])
   end
 
   def create
@@ -44,6 +45,6 @@ class FamilyMembersController < ApplicationController
   private
 
   def family_member_params
-    params.require(:family_member).permit(:first_name, :last_name_birth, :last_name_now, :gender, :birthday, :this_person_is_living)
+    params.require(:family_member).permit(:first_name, :last_name_birth, :last_name_now, :gender, :birthday, :this_person_is_living, :parent_id)
   end
 end
