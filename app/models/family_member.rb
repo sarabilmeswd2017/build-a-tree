@@ -3,6 +3,6 @@ class FamilyMember < ActiveRecord::Base
   has_ancestry
 
   def full_name
-    "#{full_name} #{last_name_now}"
+    "#{first_name} #{last_name_now}"
   end
 end
