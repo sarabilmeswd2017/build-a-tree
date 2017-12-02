@@ -5,7 +5,7 @@ class FamilyMembersController < ApplicationController
 
   def new
     @family = Family.find(params[:family_id])
-    @parent = FamilyMember.find(params[:parent_id])
+    @parent = FamilyMember.find_by(id: params[:parent_id])
     @family_member = @family.family_members.new(parent_id: params[:parent_id])
   end
 
@@ -32,9 +32,10 @@ class FamilyMembersController < ApplicationController
   end
 
   def destroy
+    @family = Family.find(params[:family_id])
     @family_member = FamilyMember.find(params[:id])
     if @family_member.destroy
-      flash[:notice] = "#{family_member.first_name} #{family_member.last_name_now} was deleted"
+      flash[:notice] = "#{@family_member.first_name} #{@family_member.last_name_now} was deleted"
       redirect_to @family
     else
       flash[:alert] = "There was an error deleting the family member. Please try again"
