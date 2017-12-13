@@ -2,8 +2,8 @@
 
 <%= link_to "Add Family Member", new_family_family_member_path(@family), class: 'btn btn-success' %>
 
-<%= link_to "Add Parent", new_family_family_member_path(@family, :child_ids), class: 'btn btn-success' %>
-<%= link_to "Add Child", new_family_family_member_path(@family, :parent_id), class: 'btn btn-success' %>
+<!-- <%= link_to "Add Parent", new_family_family_member_path(@family, :child_ids), class: 'btn btn-success' %>
+<%= link_to "Add Child", new_family_family_member_path(@family, :parent_id), class: 'btn btn-success' %> -->
 
 <%= link_to "View All Families", families_path, class: 'btn btn-success' %>
 <div class="row">
@@ -11,6 +11,6 @@
      <%= family_tree @family.family_members.arrange(order: :created_at) %>
    </div>
 </div>
-<div class="family-tree centered">
-  <%= image_tag("tree.png", alt: "family tree") %>
+<div class="family-tree">
+  <%= image_tag("tree.png", alt: "family tree", :class => "pull-right") %>
 </div>
