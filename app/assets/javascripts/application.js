@@ -14,4 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap
+//= require bootstrap-datepicker
 //= require_tree .
+
+$(document).on('turbolinks:load', function() {
+  $('.datepicker').datepicker()
+    .on('changeDate', function(){
+      $(this).datepicker('hide');
+    });
+});

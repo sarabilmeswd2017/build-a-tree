@@ -22,6 +22,8 @@ source 'https://rubygems.org'
  gem 'figaro'
  gem 'devise'
  gem 'ancestry'
+gem 'bootstrap-datepicker-rails'
+gem 'american_date'
 
  group :development, :test do
    gem 'byebug'
